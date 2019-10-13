@@ -1,6 +1,6 @@
-package implementations.abstracts;
+package main.abstracts;
 
-import implementations.objects.Node;
+import main.objects.Node;
 
 public interface Triangle {
 

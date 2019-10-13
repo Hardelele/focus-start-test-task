@@ -1,4 +1,4 @@
-package implementations.objects;
+package main.objects;
 
 public class Node {
 

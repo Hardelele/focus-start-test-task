@@ -1,6 +1,6 @@
-package implementations.abstracts;
+package main.abstracts;
 
-import implementations.FocusStartApplication;
+import main.FocusStartApplication;
 
 public interface ExceptionsPrinter {
 

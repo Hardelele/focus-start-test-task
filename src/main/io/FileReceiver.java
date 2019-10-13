@@ -1,7 +1,7 @@
-package implementations.io;
+package main.io;
 
-import implementations.FocusStartApplication;
-import implementations.abstracts.ExceptionsPrinter;
+import main.FocusStartApplication;
+import main.abstracts.ExceptionsPrinter;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

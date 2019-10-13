@@ -1,4 +1,4 @@
-package implementations;
+package main;
 
 public class FocusStartApplication {
 

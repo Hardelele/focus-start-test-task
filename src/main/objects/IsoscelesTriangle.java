@@ -1,6 +1,6 @@
-package implementations.objects;
+package main.objects;
 
-import implementations.abstracts.Triangle;
+import main.abstracts.Triangle;
 
 public class IsoscelesTriangle implements Triangle {
 
