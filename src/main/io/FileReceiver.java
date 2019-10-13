@@ -8,20 +8,20 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FileReceiver implements ExceptionsPrinter {
+public class FileReceiver {
 
     public static FileReader fileReader;
     public static BufferedReader bufferedReader;
 
-    public void inputStream() {
+    public static void inputStream() {
         try {
-            this.fileReader = new FileReader(FocusStartApplication.inputFileName);
-            this.bufferedReader = new BufferedReader(fileReader);
+            fileReader = new FileReader(FocusStartApplication.inputFileName);
+            bufferedReader = new BufferedReader(fileReader);
             FocusStartApplication.cornetString = bufferedReader.readLine();
         } catch (FileNotFoundException e) {
-            printFileNotFoundException();
+            ExceptionsPrinter.printFileNotFoundException();
         } catch (IOException e) {
-            printIOException();
+            ExceptionsPrinter.printIOException();
         }
 
     }
