@@ -23,7 +23,7 @@ public class StringConverter extends FileReceiver {
             TrianglesStorage.createNewTriangle();
             TrianglesStorage.saveNodes(cornetX,cornetY,counterForNodes);
             TrianglesStorage.calculateS();
-            TrianglesStorage.calculateAndSaveRibs();
+            TrianglesStorage.calculateRibs();
 
             counterForNodes++;
         }
