@@ -7,7 +7,7 @@ public class IsoscelesTriangle implements Triangle {
     private Double S, rib1, rib2, rib3;
     private String flag;
 
-    public void calculateAndSaveLengthOfRibs() {
+    public void calculateLengthOfRibs() {
         rib1 = ribLength(nodes[0],nodes[1]);
         rib2 = ribLength(nodes[1],nodes[2]);
         rib3 = ribLength(nodes[2],nodes[0]);
@@ -34,12 +34,10 @@ public class IsoscelesTriangle implements Triangle {
         return this.S;
     }
 
-    public void setTriangleNodesCoords(double x, double y) {
-        for (int counter = 0; counter < 3; counter++) {
+    public void setTriangleNodesCoords(double x, double y, int counter) {
             nodes[counter] = new Node();
             nodes[counter].setX(x);
             nodes[counter].setY(y);
-        }
     }
 
     public double getBaseOfTriangle() {
