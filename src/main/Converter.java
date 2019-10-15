@@ -31,7 +31,13 @@ public class Converter {
     }
 
     public static String parseTriangleToString(Triangle triangle) {
-        String string = new String();
+
+        String string = null;
+
+        for (int counter = 0; counter < 3; counter++) {
+            string += triangle.getNode(counter).getX() + " " + triangle.getNode(counter).getY() + " ";
+        }
+
         return string;
     }
 

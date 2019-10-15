@@ -32,13 +32,13 @@ public class Triangle {
     }
 
     private double getBottom() {
-        if(ribs[0]==ribs[1]) {
+        if(ribs[0].equals(ribs[1])) {
             flag = "rib2";
             return ribs[2];
-        } else if(ribs[1]==ribs[2]) {
+        } else if(ribs[1].equals(ribs[2])) {
             flag = "rib0";
             return ribs[0];
-        } else if(ribs[2]==ribs[0]) {
+        } else if(ribs[2].equals(ribs[0])) {
             flag = "rib1";
             return ribs[1];
         } else {
@@ -77,4 +77,7 @@ public class Triangle {
         return height;
     }
 
+    public Node getNode(int id) {
+        return nodes[id];
+    }
 }

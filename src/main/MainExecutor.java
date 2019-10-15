@@ -9,13 +9,20 @@ public class MainExecutor {
     public static void run() {
         FileReceiver.inputStream();
         cornetTriangle = Converter.parseStringToTriangle(FocusStartApplication.cornetString);
+        maxSTriangle = cornetTriangle;
 
-        if(maxSTriangle.getS() < cornetTriangle.getS()) {
-            maxSTriangle = cornetTriangle;
-        } //TODO::Если equal() = true.
+        while (FileReceiver.inputStreamHasNext()) {
+            FileReceiver.inputStream();
+            cornetTriangle = Converter.parseStringToTriangle(FocusStartApplication.cornetString);
 
-        FocusStartApplication.cornetString = String.valueOf(maxSTriangle.getS());
+            if(maxSTriangle.getS() < cornetTriangle.getS()) {
+                maxSTriangle = cornetTriangle;
+            } //TODO::Если equal() = true.
+
+        }
+
         FileReceiver.outputStream();
+        FileReceiver.close();
     }
 
 }

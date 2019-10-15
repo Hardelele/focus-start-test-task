@@ -1,8 +1,10 @@
 package main;
 
+import java.io.File;
+
 public class FocusStartApplication {
 
-    public static String inputFileName, outputFileName;
+    public static File inputFile, outputFile;
 
     public static String cornetString;
 
@@ -13,11 +15,11 @@ public class FocusStartApplication {
     }
 
     public static void setInputFileName(String inputFileName) {
-        FocusStartApplication.inputFileName = inputFileName;
+        FocusStartApplication.inputFile = new File(inputFileName);
     }
 
     public static void setOutputFileName(String outputFileName) {
-        FocusStartApplication.outputFileName = outputFileName;
+        FocusStartApplication.outputFile = new File(outputFileName);
     }
 
 }
