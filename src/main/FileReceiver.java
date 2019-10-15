@@ -1,7 +1,4 @@
-package main.io;
-
-import main.FocusStartApplication;
-import main.abstracts.ExceptionsPrinter;
+package main;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -23,7 +20,10 @@ public class FileReceiver {
         } catch (IOException e) {
             ExceptionsPrinter.printIOException();
         }
+    }
 
+    public static void outputStream() {
+        System.out.println();
     }
 
 }

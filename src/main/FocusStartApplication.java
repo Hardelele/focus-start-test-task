@@ -4,15 +4,20 @@ public class FocusStartApplication {
 
     public static String inputFileName, outputFileName;
 
-    /**
-     * cornetString основная переменная для обработки строк получаемых их файла.
-     * Разбивается на лексемы, сохраняется в классе IsoscelesTriangle, соответствующего индекса.
-     */
-
     public static String cornetString;
 
     public static void main(String[] args) {
-        inputFileName = args[0];
-        outputFileName = args[1];
+        setInputFileName(args[0]);
+        setOutputFileName(args[1]);
+        MainExecutor.run();
     }
+
+    public static void setInputFileName(String inputFileName) {
+        FocusStartApplication.inputFileName = inputFileName;
+    }
+
+    public static void setOutputFileName(String outputFileName) {
+        FocusStartApplication.outputFileName = outputFileName;
+    }
+
 }

@@ -1,8 +1,16 @@
-package main.objects;
+package main;
 
 public class Node {
 
     private double x, y;
+
+    public Node() {
+    }
+
+    public Node(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
 
     public void setX(double x) {
         this.x = x;

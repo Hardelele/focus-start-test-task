@@ -1,14 +1,12 @@
-package main.abstracts;
+package main;
 
-import main.FocusStartApplication;
+public class ExceptionsPrinter {
 
-public interface ExceptionsPrinter {
-
-    static void printFileNotFoundException() {
+    public static void printFileNotFoundException() {
         System.out.println("Не найден файл с именем: " + FocusStartApplication.inputFileName);
     }
 
-    static void printIOException() {
+    public static void printIOException() {
         System.out.println("При выводе в файл: '" + FocusStartApplication.outputFileName + "',- возникла ошибка");
     }
 
