@@ -17,9 +17,7 @@ public class HFileWriter {
      * Method checkOutputFile() check existence of
      * output File and if it isn't, create that one.
      */
-
     public static void checkOutputFile() {
-
         if(!outputFile.exists()) {
 
             try {
@@ -29,15 +27,12 @@ public class HFileWriter {
             }
 
         }
-
     }
 
     /**
      * Method write() save writableString as result in outputFile
      */
-
     public static void write(String writableString) {
-
         try {
             fileWriter = new FileWriter(outputFile);
             bufferedWriter = new BufferedWriter(fileWriter);
@@ -47,6 +42,5 @@ public class HFileWriter {
         } catch (IOException e) {
             ExceptionsPrinter.printIOException();
         }
-
     }
 }

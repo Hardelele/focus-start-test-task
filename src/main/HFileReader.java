@@ -14,7 +14,6 @@ public class HFileReader {
      *
      * @param ref link to input file
      */
-
     public static void setInputFile(String ref) {
         HFileReader.inputFile = new File(ref);
     }
@@ -23,9 +22,7 @@ public class HFileReader {
      * Method check Input File() check existence of
      * input File and if it isn't, create that one.
      */
-
     public static void checkInputFile() {
-
         if(!inputFile.exists()) {
 
             try {
@@ -35,7 +32,6 @@ public class HFileReader {
             }
 
         }
-
     }
 
     /**
@@ -43,7 +39,6 @@ public class HFileReader {
      *
      * @return string of triangle points
      */
-
     public static String readNext() {
         try {
             return bufferedReader.readLine();

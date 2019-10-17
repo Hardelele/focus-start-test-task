@@ -5,6 +5,7 @@ import java.util.StringTokenizer;
 public class Triangle {
 
     public final static int countOfPoints = 3;
+
     public final static int countOfRibs = 3;
 
     private double S, base, height;
@@ -17,7 +18,6 @@ public class Triangle {
      * Constructor Triangle() without params
      * Create empty Triangle: S = 0, points[any] = 0, flag isNull = true.
      */
-
     public Triangle() {
         setPointsAs0();
         S = 0;
@@ -29,7 +29,6 @@ public class Triangle {
      *
      * @param stringTriangle it is string of 6 points
      */
-
     public Triangle(String stringTriangle) {
         setPointsAs0();
         setPoints(stringTriangle);
@@ -41,7 +40,6 @@ public class Triangle {
     /**
      * Method setPoints0 used for set all points of triangle as 0
      */
-
     private void setPointsAs0() {
 
         for (int counter = 0; counter < countOfPoints; counter++) {
@@ -55,7 +53,6 @@ public class Triangle {
      *
      * @return string of 6 points (coords of triangle)
      */
-
     @Override
     public String toString() {
 
@@ -77,7 +74,6 @@ public class Triangle {
      *
      * @param stringTriangle it is string of 6 points
      */
-
     private void setPoints(String stringTriangle) {
 
         StringTokenizer tokenizer = new StringTokenizer(stringTriangle," ");
@@ -102,7 +98,6 @@ public class Triangle {
     /**
      * Method calculateS()
      */
-
     private void calculateS() {
         S = base * height;
     }
@@ -110,7 +105,6 @@ public class Triangle {
     /**
      * Method setRibs() fill array of ribs
      */
-
     private void setRibs() {
         ribs[0] = new Rib(points[0],points[1]);
         ribs[1] = new Rib(points[1],points[2]);
@@ -121,7 +115,6 @@ public class Triangle {
      * Method setBaseAndHeight() compare ribs and if finds equal
      * calculate and set Base and Height of triangle
      */
-
     private void calculateBaseAndHeight() {
 
         if (ribs[0].equals(ribs[1])) {
@@ -147,7 +140,6 @@ public class Triangle {
      * @param base double value - base of triangle
      * @return
      */
-
     private double calculateHeight(double rib, double base) {
         return Math.sqrt(Math.pow(rib,2)-Math.pow((base/2),2));
     }

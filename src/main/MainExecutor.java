@@ -12,7 +12,6 @@ public class MainExecutor {
     /**
      * Method run() only execute methods, that implemented in MainExecutor.java
      */
-
     public static void run() {
         setIOFiles();
         checkIOFiles();
@@ -27,7 +26,6 @@ public class MainExecutor {
      *
      * @param args it's names of IO files.
      */
-
     public static void getArgs(String[] args) {
         MainExecutor.args = args;
     }
@@ -37,7 +35,6 @@ public class MainExecutor {
      * FileReader.setInputFile(args[0]) and FileWriter.setOutputFile(args[1])
      * It's used in method run(), to make that one more readable.
      */
-
     private static void setIOFiles() {
         HFileReader.setInputFile(args[0]);
         HFileWriter.setOutputFile(args[1]);
@@ -52,7 +49,6 @@ public class MainExecutor {
      * Method setDesiredTriangleEmpty call constructor Triangle() without params,
      * that set all points as 0, set S = 0 and set flag isNull = true.
      */
-
     private static void setMaxSTriangleAsEmpty() {
         maxSTriangle = new Triangle();
     }
@@ -63,7 +59,6 @@ public class MainExecutor {
      *
      * @param thisTriangle it's triangle that we need to compare with maxSTriangle
      */
-
     private static void compareWithMaxSTriangle(Triangle thisTriangle) {
         if (thisTriangle.getS() > maxSTriangle.getS()) {
             maxSTriangle = thisTriangle;
@@ -75,7 +70,6 @@ public class MainExecutor {
      *
      * @param cornetString it is string of 6 points
      */
-
     private static void setCornetString(String cornetString) {
         MainExecutor.cornetString = cornetString;
     }
@@ -95,7 +89,6 @@ public class MainExecutor {
             compareWithMaxSTriangle(cornetTriangle);
             cornetString = "";
         }
-
     }
 
     private static void saveResult() {
