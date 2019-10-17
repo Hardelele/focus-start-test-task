@@ -2,7 +2,7 @@ package main;
 
 public class Rib {
 
-    private double length;
+    private Double length;
 
     /*
     public Rib() {
@@ -27,6 +27,10 @@ public class Rib {
 
     public double getLength() {
         return length;
+    }
+
+    public boolean equals(Rib rib) {
+        return length.equals(rib.length);
     }
 
 }
