@@ -82,13 +82,21 @@ public class MainExecutor {
     }
 
     private static void searchMaxSTriangle() {
+        HFileReader.setupFileReader();
         Triangle cornetTriangle;
-        while (HFileReader.endOfFile()){
+
+        while (true) {
             setCornetString(HFileReader.readNext());
+
+            if(cornetString == null) {
+                break;
+            }
+            
             cornetTriangle = new Triangle(cornetString);
             compareWithMaxSTriangle(cornetTriangle);
             cornetString = "";
         }
+
     }
 
     private static void saveResult() {
