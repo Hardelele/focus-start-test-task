@@ -1,19 +1,7 @@
 package main;
 
 public class Rib {
-
     private Double length;
-
-    /*
-    public Rib() {
-        setLengthAs0();
-    }
-
-    private void setLengthAs0() {
-        length = 0;
-    }
-    */
-
 
     public Rib(Point point1, Point point2) {
         setLength(point1, point2);
@@ -32,5 +20,4 @@ public class Rib {
     public boolean equals(Rib rib) {
         return length.equals(rib.length);
     }
-
 }

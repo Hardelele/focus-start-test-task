@@ -3,7 +3,6 @@ package main;
 import java.io.*;
 
 public class HFileReader {
-
     private static FileReader fileReader = null;
 
     private static BufferedReader bufferedReader = null;
@@ -62,5 +61,4 @@ public class HFileReader {
         }
         bufferedReader = new BufferedReader(fileReader);
     }
-
 }

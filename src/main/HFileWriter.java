@@ -3,7 +3,6 @@ package main;
 import java.io.*;
 
 public class HFileWriter {
-
     private static FileWriter fileWriter = null;
 
     private static BufferedWriter bufferedWriter = null;
@@ -50,5 +49,4 @@ public class HFileWriter {
         }
 
     }
-
 }

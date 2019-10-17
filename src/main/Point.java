@@ -2,7 +2,6 @@
 package main;
 
 public class Point {
-
     private double x, y;
 
     public Point() {
@@ -28,5 +27,4 @@ public class Point {
     public double getY() {
         return y;
     }
-
 }

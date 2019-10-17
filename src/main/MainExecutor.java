@@ -3,7 +3,6 @@ package main;
 import java.util.HashSet;
 
 public class MainExecutor {
-
     private static String[] args;
 
     private static String cornetString = null;
@@ -91,7 +90,7 @@ public class MainExecutor {
             if(cornetString == null) {
                 break;
             }
-            
+
             cornetTriangle = new Triangle(cornetString);
             compareWithMaxSTriangle(cornetTriangle);
             cornetString = "";
@@ -103,5 +102,4 @@ public class MainExecutor {
         String result = maxSTriangle.toString();
         HFileWriter.write(result);
     }
-
 }

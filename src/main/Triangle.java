@@ -89,8 +89,10 @@ public class Triangle {
             cornetX = Double.parseDouble(tokenizer.nextToken());
             points[counter].setX(cornetX);
 
-            cornetY = Double.parseDouble(tokenizer.nextToken());
-            points[counter].setY(cornetY);
+            if (tokenizer.hasMoreTokens()){
+                cornetY = Double.parseDouble(tokenizer.nextToken());
+                points[counter].setY(cornetY);
+            }
 
             counter++;
         }
@@ -149,5 +151,4 @@ public class Triangle {
     private double calculateHeight(double rib, double base) {
         return Math.sqrt(Math.pow(rib,2)-Math.pow((base/2),2));
     }
-
 }
