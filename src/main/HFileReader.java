@@ -46,19 +46,21 @@ public class HFileReader {
      */
 
     public static String readNext() {
-
         try {
-            fileReader = new FileReader(inputFile);
-            bufferedReader = new BufferedReader(fileReader);
             return bufferedReader.readLine();
-        } catch (FileNotFoundException e) {
-            ExceptionsPrinter.printFileNotFoundException(inputFile);
-            return null;
         } catch (IOException e) {
             ExceptionsPrinter.printIOException();
             return null;
         }
+    }
 
+    public static void setupFileReader() {
+        try {
+            fileReader = new FileReader(inputFile);
+        } catch (FileNotFoundException e) {
+            ExceptionsPrinter.printFileNotFoundException(inputFile);
+        }
+        bufferedReader = new BufferedReader(fileReader);
     }
 
 }
