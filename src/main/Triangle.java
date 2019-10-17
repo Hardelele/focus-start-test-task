@@ -4,13 +4,14 @@ import java.util.StringTokenizer;
 
 public class Triangle {
 
-    private final static int countOfPoints = 3;
+    public final static int countOfPoints = 3;
+    public final static int countOfRibs = 3;
 
-    private double S;
-
-    private boolean isNull;
+    private double S, base, height;
 
     private Point[] points = new Point[countOfPoints];
+
+    private Rib[] ribs = new Rib[countOfRibs];
 
     /**
      * Constructor Triangle() without params
@@ -18,7 +19,6 @@ public class Triangle {
      */
 
     public Triangle() {
-        isNull = true;
         setPointsAs0();
         S = 0;
     }
@@ -31,7 +31,11 @@ public class Triangle {
      */
 
     public Triangle(String stringTriangle) {
+        setPointsAs0();
         setPoints(stringTriangle);
+        setRibs();
+        calculateBaseAndHeight();
+        calculateS();
     }
 
     /**
@@ -41,8 +45,7 @@ public class Triangle {
     private void setPointsAs0() {
 
         for (int counter = 0; counter < countOfPoints; counter++) {
-            points[counter].setX(0);
-            points[counter].setY(0);
+            points[counter] = new Point(0,0);
         }
 
     }
@@ -56,7 +59,7 @@ public class Triangle {
     @Override
     public String toString() {
 
-        String stringTriangle = null;
+        String stringTriangle = "";
 
         for (int counter = 0; counter < countOfPoints; counter++) {
             stringTriangle += points[counter].getX() + " " + points[counter].getY() + " ";
@@ -99,7 +102,52 @@ public class Triangle {
      */
 
     private void calculateS() {
+        S = base * height;
+    }
 
+    /**
+     * Method setRibs() fill array of ribs
+     */
+
+    private void setRibs() {
+        ribs[0] = new Rib(points[0],points[1]);
+        ribs[1] = new Rib(points[1],points[2]);
+        ribs[2] = new Rib(points[2],points[0]);
+    }
+
+    /**
+     * Method setBaseAndHeight() compare ribs and if finds equal
+     * calculate and set Base and Height of triangle
+     */
+
+    private void calculateBaseAndHeight() {
+
+        if (ribs[0].equals(ribs[1])) {
+            base = ribs[2].getLength();
+            height = calculateHeight(ribs[0].getLength(),base);
+        } else if (ribs[1].equals(ribs[2])) {
+            base = ribs[0].getLength();
+            height = calculateHeight(ribs[1].getLength(),base);
+        } else if (ribs[2].equals(ribs[0])) {
+            base = ribs[1].getLength();
+            height = calculateHeight(ribs[2].getLength(),base);
+        } else {
+            base = 0;
+            height = 0;
+        }
+
+    }
+
+    /**
+     * Method calculateHeight() get height from diagonal^2 = height^2 + width^2
+     *
+     * @param rib one side of triangle
+     * @param base double value - base of triangle
+     * @return
+     */
+
+    private double calculateHeight(double rib, double base) {
+        return Math.sqrt(Math.pow(rib,2)-Math.pow((base/2),2));
     }
 
 }
