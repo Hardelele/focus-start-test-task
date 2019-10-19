@@ -12,7 +12,8 @@ public class MainExecutor {
     /**
      * Method run() only execute methods, that implemented in MainExecutor.java
      */
-    public static void run() {
+    public static void run(String[] args) {
+        setArgs(args);
         setIOFiles();
         checkIOFiles();
         setMaxSTriangleAsEmpty();

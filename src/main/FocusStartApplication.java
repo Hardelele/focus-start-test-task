@@ -7,7 +7,6 @@ public class FocusStartApplication {
      * @param args get user args - names of IO files
      */
     public static void main(String[] args) {
-        MainExecutor.setArgs(args);
-        MainExecutor.run();
+        MainExecutor.run(args);
     }
 }
