@@ -84,15 +84,26 @@ public class MainExecutor {
             if(cornetString == null) {
                 break;
             }
+            try {
+                cornetTriangle = new Triangle(cornetString);
+                compareWithMaxSTriangle(cornetTriangle);
+            } catch (Exception e) {
 
-            cornetTriangle = new Triangle(cornetString);
-            compareWithMaxSTriangle(cornetTriangle);
+            }
             cornetString = "";
         }
     }
 
     private static void saveResult() {
-        String result = maxSTriangle.toString();
+        String result;
+        if(maxSTriangle.getS()==0) {
+            result = "";
+            System.out.println("Max S triangle = 0 or input file is empty!");
+            System.out.println("Out file clear!");
+        } else {
+            result = maxSTriangle.toString();
+            System.out.println("Success!");
+        }
         HFileWriter.write(result);
     }
 }
