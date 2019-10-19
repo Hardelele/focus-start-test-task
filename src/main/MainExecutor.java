@@ -26,7 +26,7 @@ public class MainExecutor {
      *
      * @param args it's names of IO files.
      */
-    public static void getArgs(String[] args) {
+    public static void setArgs(String[] args) {
         MainExecutor.args = args;
     }
 
